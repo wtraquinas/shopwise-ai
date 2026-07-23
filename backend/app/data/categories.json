@@ -1,0 +1,44 @@
+[
+  {
+    "id": "tablets",
+    "title": "Tablets",
+    "description": "Find the best tablets for work, study and entertainment.",
+    "icon": "tablet",
+    "search": "tablet"
+  },
+  {
+    "id": "tablets-alexa",
+    "title": "Tablets with Alexa",
+    "description": "Alexa-enabled tablets for smart home integration.",
+    "icon": "speaker",
+    "search": "Alexa tablet"
+  },
+  {
+    "id": "kids-tablets",
+    "title": "Tablets for Kids",
+    "description": "Safe and durable tablets designed for children.",
+    "icon": "baby",
+    "search": "kids tablet"
+  },
+  {
+    "id": "ereaders",
+    "title": "E-Readers",
+    "description": "Digital reading devices with long battery life.",
+    "icon": "book",
+    "search": "e-reader"
+  },
+  {
+    "id": "smart-assistants",
+    "title": "Smart Assistants",
+    "description": "Voice assistants for your smart home.",
+    "icon": "mic",
+    "search": "smart assistant"
+  },
+  {
+    "id": "chargers",
+    "title": "Chargers & Adapters",
+    "description": "USB chargers, cables and power adapters.",
+    "icon": "plug",
+    "search": "USB charger adapter"
+  }
+]
