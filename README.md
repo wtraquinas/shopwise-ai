@@ -1,0 +1,2 @@
+# shopwise-ai
+Shopping Advisor
