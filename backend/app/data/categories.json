@@ -5,6 +5,7 @@
     "description": "Find the best tablets for work, study and entertainment.",
     "icon": "tablet",
     "featured": true,
+    "icon": "📱",
     "search": "tablet"
   },
   {
@@ -13,6 +14,7 @@
     "description": "Alexa-enabled tablets for smart home integration.",
     "icon": "speaker",
     "featured": true,
+    "icon": "🏠",
     "search": "Alexa tablet"
   },
   {
@@ -21,6 +23,7 @@
     "description": "Safe and durable tablets designed for children.",
     "icon": "baby",
     "featured": true,
+    "icon": "👶",
     "search": "kids tablet"
   },
   {
@@ -29,6 +32,7 @@
     "description": "Digital reading devices with long battery life.",
     "icon": "book",
     "featured": true,
+    "icon": "📚",
     "search": "e-reader"
   },
   {
@@ -37,6 +41,7 @@
     "description": "Voice assistants for your smart home.",
     "icon": "mic",
     "featured": true,
+    "icon": "🔊",
     "search": "smart assistant"
   },
   {
@@ -45,6 +50,7 @@
     "description": "USB chargers, cables and power adapters.",
     "icon": "plug",
     "featured": true,
+    "icon": "🔌",
     "search": "USB charger adapter"
   }
 ]

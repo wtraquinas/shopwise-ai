@@ -2,26 +2,65 @@ import { Link } from "react-router-dom";
 
 function CategoryCard({ category }) {
   return (
-    <Link to={`/category/${category.id}`}>
+    <Link
+      to={`/category/${category.id}`}
+      style={{
+        textDecoration: "none",
+        color: "inherit",
+      }}
+    >
       <div
         style={{
-          border: "1px solid #ddd",
-          borderRadius: 10,
-          padding: 20,
-          background: "white",
-          transition: "0.2s",
+          background: "#ffffff",
+          border: "1px solid #e5e7eb",
+          borderRadius: "16px",
+          padding: "24px",
+          height: "220px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          transition: "0.2s ease",
+          cursor: "pointer",
         }}
       >
-        <h2>{category.title}</h2>
+        <div>
+          <div
+            style={{
+              fontSize: "42px",
+              marginBottom: "16px",
+            }}
+          >
+            {category.icon}
+          </div>
 
-        <p
+          <h2
+            style={{
+              margin: 0,
+              marginBottom: "10px",
+              fontSize: "28px",
+            }}
+          >
+            {category.name}
+          </h2>
+
+          <p
+            style={{
+              color: "#64748b",
+              lineHeight: 1.5,
+            }}
+          >
+            {category.description}
+          </p>
+        </div>
+
+        <div
           style={{
-            marginTop: 10,
-            color: "#666",
+            color: "#2563eb",
+            fontWeight: "bold",
           }}
         >
-          {category.description}
-        </p>
+          Browse →
+        </div>
       </div>
     </Link>
   );
