@@ -40,7 +40,26 @@ function Category() {
           padding: 20,
         }}
       >
-        <h2>{id}</h2>
+        <h1
+          style={{
+            fontSize: 38,
+            marginBottom: 10,
+          }}
+        >
+          {id
+            .split("-")
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(" ")}
+        </h1>
+
+        <p
+          style={{
+            color: "#64748b",
+            marginBottom: 40,
+          }}
+        >
+          Browse our AI-selected products.
+        </p>
 
         {loading ? (
           <Loading />
