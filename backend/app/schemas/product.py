@@ -3,24 +3,13 @@ from pydantic import BaseModel
 
 class Product(BaseModel):
     id: str
+    name: str
     category: str
-
-    brand: str
-    title: str
-
-    price: float
-    currency: str
-
-    rating: float
-    review_count: int
-
-    image: str
-    store: str
-    url: str
-
     description: str
+    price: float
+    rating: float
 
-    # Future AI fields
-    summary: str | None = None
-    pros: list[str] = []
-    cons: list[str] = []
+    review_count: int | None = None
+    store: str | None = None
+    url: str | None = None
+    image: str | None = None
