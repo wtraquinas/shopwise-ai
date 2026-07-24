@@ -1,0 +1,20 @@
+[
+  {
+    "id": "tablet-001",
+    "name": "Amazon Fire HD 10",
+    "category": "Tablets",
+    "price": 149.99,
+    "rating": 4.5,
+    "description": "10-inch Full HD tablet with Alexa.",
+    "image": "https://example.com/firehd10.jpg"
+  },
+  {
+    "id": "tablet-002",
+    "name": "Samsung Galaxy Tab A9+",
+    "category": "Tablets",
+    "price": 229.99,
+    "rating": 4.7,
+    "description": "11-inch Android tablet.",
+    "image": "https://example.com/taba9.jpg"
+  }
+]
