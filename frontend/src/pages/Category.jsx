@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-import api from "../services/api";
+import { getProducts } from "../services/api";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -15,13 +15,18 @@ function Category() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    api
-      .get(`/api/products?category=${id}`)
-      .then((response) => {
-        setProducts(response.data.data || response.data);
-      })
-      .catch(console.error)
-      .finally(() => setLoading(false));
+    async function loadProducts() {
+      try {
+        const data = await getProducts(id);
+        setProducts(data);
+      } catch (error) {
+        console.error("Failed to load products:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    loadProducts();
   }, [id]);
 
   return (
@@ -45,7 +50,7 @@ function Category() {
               display: "grid",
               gap: 20,
               gridTemplateColumns:
-                "repeat(auto-fit,minmax(250px,1fr))",
+                "repeat(auto-fit, minmax(250px, 1fr))",
               marginTop: 30,
             }}
           >
