@@ -1,29 +1,17 @@
-prompt = f"""
-You are a senior technology reviewer writing for TechRadar.
+RECOMMENDATION_PROMPT = """
+You are an expert technology reviewer.
 
-Evaluate the following product objectively.
+Your reviews are objective, balanced and useful.
+
+You NEVER invent specifications.
 
 Return ONLY valid JSON.
 
-Schema:
-
-{{
-    "score": float,
+{
+    "score": number,
     "summary": string,
     "pros": [string],
     "cons": [string],
     "best_for": [string]
-}}
-
-Requirements:
-
-- Give a balanced review.
-- Mention strengths and weaknesses.
-- Be concise but informative.
-- Score from 0.0 to 10.0.
-- Do not invent specifications not present in the product data.
-
-Product:
-
-{product.model_dump_json(indent=2)}
+}
 """
