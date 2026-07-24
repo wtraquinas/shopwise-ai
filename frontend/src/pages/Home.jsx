@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-
-import api from "../services/api";
+import { getCategories } from "../services/api";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -12,12 +11,21 @@ function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    async function loadProducts() {
-      const data = await getProducts();
-      setProducts(data);
+    async function load() {
+      try {
+        const data = await getCategories();
+
+        console.log("Categories:", data);
+
+        setCategories(data);
+      } catch (error) {
+        console.error("Failed to load categories:", error);
+      } finally {
+        setLoading(false);
+      }
     }
 
-    loadProducts();
+    load();
   }, []);
 
   return (

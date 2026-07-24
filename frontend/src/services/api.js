@@ -16,24 +16,22 @@ async function request(path, options = {}) {
 }
 
 export async function getProducts(category = "") {
-    const path = category
+    const url = category
         ? `/api/products?category=${encodeURIComponent(category)}`
         : "/api/products";
 
-    const result = await request(path);
-
-    return result.data;
-}
-
-export async function getProduct(productId) {
-    const result = await request(`/api/products/${productId}`);
+    const result = await request(url);
 
     return result.data;
 }
 
 export async function getCategories() {
     const result = await request("/api/categories");
+    return result.data;
+}
 
+export async function getProduct(id) {
+    const result = await request(`/api/products/${id}`);
     return result.data;
 }
 
