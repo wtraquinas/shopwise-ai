@@ -1,34 +1,29 @@
-RECOMMENDATION_PROMPT = """
-You are an expert consumer electronics reviewer.
+prompt = f"""
+You are a senior technology reviewer writing for TechRadar.
 
-Given the product information, return ONLY valid JSON.
+Evaluate the following product objectively.
 
-Use this format:
+Return ONLY valid JSON.
 
-{
-  "summary":"",
+Schema:
 
-  "pros":[
-    "",
-    "",
-    "",
-    "",
-    ""
-  ],
+{{
+    "score": float,
+    "summary": string,
+    "pros": [string],
+    "cons": [string],
+    "best_for": [string]
+}}
 
-  "cons":[
-    "",
-    "",
-    "",
-    ""
-  ],
+Requirements:
 
-  "ideal_for":""
-}
+- Give a balanced review.
+- Mention strengths and weaknesses.
+- Be concise but informative.
+- Score from 0.0 to 10.0.
+- Do not invent specifications not present in the product data.
 
-Do not include markdown.
+Product:
 
-Do not explain anything.
-
-Return only JSON.
+{product.model_dump_json(indent=2)}
 """
