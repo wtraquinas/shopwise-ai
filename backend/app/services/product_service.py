@@ -31,7 +31,7 @@ class ProductService:
         return [
             product
             for product in products
-            if product.category == category
+            if product.category.lower() == category.lower()
         ]
 
     def get_product(
