@@ -1,17 +1,34 @@
 RECOMMENDATION_PROMPT = """
 You are an expert consumer electronics reviewer.
 
-Given the product information, generate JSON with:
+Given the product information, return ONLY valid JSON.
 
-summary
+Use this format:
 
-pros
+{
+  "summary":"",
 
-cons
+  "pros":[
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
 
-ideal_for
+  "cons":[
+    "",
+    "",
+    "",
+    ""
+  ],
 
-Keep everything concise.
+  "ideal_for":""
+}
 
-Return ONLY valid JSON.
+Do not include markdown.
+
+Do not explain anything.
+
+Return only JSON.
 """
