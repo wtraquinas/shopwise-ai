@@ -12,13 +12,12 @@ function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    api
-      .get("/api/categories")
-      .then((response) => {
-        setCategories(response.data.data || response.data);
-      })
-      .catch(console.error)
-      .finally(() => setLoading(false));
+    async function loadProducts() {
+      const data = await getProducts();
+      setProducts(data);
+    }
+
+    loadProducts();
   }, []);
 
   return (
