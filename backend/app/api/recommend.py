@@ -1,32 +1,28 @@
 from fastapi import APIRouter, HTTPException
 
-from app.ai.openai_provider import OpenAIProvider
-from app.schemas.recommendation import RecommendationRequest
-from app.services.product_service import ProductService
+from app.schemas.recommendation import (
+    RecommendationRequest,
+    RecommendationResponse,
+)
+
+from app.services.recommendation_service import RecommendationService
 
 router = APIRouter(
     prefix="/api/recommend",
-    tags=["Recommendations"]
+    tags=["AI"],
 )
 
-provider = OpenAIProvider()
-products = ProductService()
+service = RecommendationService()
 
 
-@router.post("")
+@router.post("", response_model=RecommendationResponse)
 def recommend(request: RecommendationRequest):
 
-    product = products.get_product(request.product_id)
+    try:
+        return service.recommend(request.product_id)
 
-    if product is None:
+    except ValueError as e:
         raise HTTPException(
             status_code=404,
-            detail="Product not found"
+            detail=str(e),
         )
-
-    recommendation = provider.generate_recommendation(product)
-
-    return {
-        "success": True,
-        "data": recommendation
-    }
